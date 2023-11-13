@@ -1,10 +1,8 @@
-ekg-terp
-==============================
+# ekg-terp
 
 AI EKG Interpretation
 
-Project Organization
-------------
+## Project Organization
 
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
@@ -51,7 +49,52 @@ Project Organization
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
+---
 
---------
+# EKG Interpretation Project
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+## Overview
+
+This project aims to develop an automated tool for interpreting electrocardiogram (EKG) data using machine learning techniques. It involves preprocessing the MIT-BIH Arrhythmia Database, exploratory data analysis, feature extraction, model training, and evaluation.
+
+## Data Preprocessing
+
+The EKG signal data from `.dat` files are preprocessed to remove noise and normalize the signals. Each heartbeat is segmented for further analysis.
+
+### Scripts
+
+- `load_data.py`: Loads EKG data segments from `.npy` files.
+- `visualize_data.py`: Generates plots of EKG segments for visual inspection.
+- `statistical_analysis.py`: Calculates and outputs basic statistics of the segments.
+- `main_analysis.py`: Main script that orchestrates the loading, visualization, and statistical analysis of EKG data.
+
+## Data Exploration and Analysis
+
+Data exploration includes visual inspection and statistical analysis of the preprocessed EKG segments. This phase ensures the data quality and informs further modeling steps.
+
+### Findings
+
+- The mean of the segments is close to zero, indicating successful normalization.
+- The standard deviation of the segments suggests a normal level of variability within EKG data.
+
+### Visualizations
+
+- Plots are generated to visually inspect the individual EKG segments.
+- Currently, plots are not saved to files as they are used for inline inspection.
+
+## Next Steps
+
+- Feature extraction and selection based on the analysis findings.
+- Model training and validation to develop an EKG interpretation model.
+- Model evaluation using appropriate medical diagnostic performance metrics.
+
+## Running the Scripts
+
+To run the analysis pipeline, ensure you are in the project's root directory and activate your virtual environment. Then execute the following command:
+
+````bash
+python src/main_analysis.py```
+
+````
+
+This will load the data, perform analysis, and output basic statistics to the console.
